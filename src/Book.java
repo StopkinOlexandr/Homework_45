@@ -15,4 +15,16 @@ public class Book implements Comparable<Book> {
     this.pages = pages;
   }
 
+  @Override
+  public String toString() {
+    return author + " \"" + title + "\" " + pages;
+  }
+
+  @Override
+  public int compareTo(Book other) {
+    if(this.author.compareTo(other.author) != 0){
+      return this.author.compareTo(other.author);
+    }
+    return this.title.compareTo(other.title);
+  }
 }
